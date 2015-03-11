@@ -37,6 +37,8 @@ module.exports.areas = function(areaFilePath, givenOptions){
       var echoPath = beforeSpace(echoAreaLine);
       var passthrough = ( echoPath.toLowerCase() === 'passthrough' );
 
+      if( passthrough ) echoPath = 'passthrough';
+
       var echoDesc = /-d "([^"]+?)"/.exec(echoAreaLine);
       if( echoDesc !== null ){
          echoDesc = echoDesc[1];
