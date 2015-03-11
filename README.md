@@ -1,6 +1,8 @@
 This module (`fidoconfig`) is a reader of fidoconfig (Fidonet configuration) files. These files are mostly [used](http://husky.sourceforge.net/fidoconf.html) by Husky Portable Fidonet project.
 
-The application is currently in an early phase of its development and thus does not have the desired level of feature completeness.
+This module is written in JavaScript and requires [Node.js](http://nodejs.org/) to run. (Node.js version 0.10.x or 0.12.x is recommended. The latest stable [io.js](https://iojs.org/) is fine too.)
+
+This module is currently in an early phase of its development and thus does not have the desired level of feature completeness.
 
 ## Installing the fidoconfig module
 
@@ -53,6 +55,8 @@ This method currently has the following limitations:
 * Message base types are not detected.
 
 ## Testing the fidoconfig module
+
+[![(build testing status)](https://img.shields.io/travis/Mithgol/node-fidoconfig/master.svg?style=plastic)](https://travis-ci.org/Mithgol/node-fidoconfig)
 
 It is necessary to install [Mocha](http://visionmedia.github.io/mocha/) and [JSHint](http://jshint.com/) for testing.
 
