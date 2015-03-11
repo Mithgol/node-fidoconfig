@@ -52,6 +52,16 @@ This method currently has the following limitations:
 
 * Message base types are not detected.
 
+## Testing the fidoconfig module
+
+It is necessary to install [Mocha](http://visionmedia.github.io/mocha/) and [JSHint](http://jshint.com/) for testing.
+
+* You may install Mocha globally (`npm install mocha -g`) or locally (`npm install mocha` in the directory of the fidoconfig module).
+
+* You may install JSHint globally (`npm install jshint -g`) or locally (`npm install jshint` in the directory of the fidoconfig module).
+
+After that you may run `npm test` (in the directory of the fidoconfig module).
+
 ## License
 
 MIT license (see the `LICENSE` file).
