@@ -52,5 +52,19 @@ module.exports.areas = function(areaFilePath, givenOptions){
       };
    });
 
+   echomailAreas.area = function(areaName, callback){
+      var lcAreaName = areaName.toLowerCase();
+      if( typeof this[lcAreaName] === 'undefined' ){
+         return callback({ notFound: true });
+      }
+      if( this[lcAreaName].passthrough ){
+         return callback({ passthrough: true });
+      }
+      callback(
+         null,
+         extend({}, this[lcAreaName])
+      );
+   };
+
    return echomailAreas;
 };

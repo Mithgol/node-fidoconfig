@@ -1,18 +1,21 @@
 /* global describe, it */
-var areas;
+var areas, areasNoFunction;
 var assert = require('assert');
 var path = require('path');
+var fidoconfig = require('../');
+
+var pathCFG = path.join(__dirname, 'areas.cfg');
 
 describe('Echomail area configuration parser', function(){
    it('can run a fidoconfig echomail area configuration parser', function(){
       assert.doesNotThrow(function(){
-         areas = require('../').areas(
-            path.join(__dirname, 'areas.cfg')
-         );
+         areas = fidoconfig.areas(pathCFG);
+         areasNoFunction = fidoconfig.areas(pathCFG);
+         delete areasNoFunction.area;
       });
    });
    it('reads the correct echomail area configuration', function(){
-      assert.deepEqual(areas, {
+      assert.deepEqual(areasNoFunction, {
          'ganjanet.local': {
             configName: 'GanjaNet.Local',
             passthrough: false,
