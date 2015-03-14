@@ -54,6 +54,14 @@ This method currently has the following limitations:
 
 * Message base types are not detected.
 
+The returned object also has its own method `.area(areaName, callback)` that checks if the given `areaName` (not case-sensitive) exists among the object's properties and then does one of the following:
+
+* If the area does not exist, `callback({notFound: true})` is called.
+
+* If the area exists in the passthrough mode, `callback({passthrough: true})` is called.
+
+* If the area exists and its mode isn't passthrough, `callback(null, areaData)` is called. The `areaData` object (received by that callback) describes the designated echomail area (it has the properties such as `path` or `description` as explained above); however, it is a clone of the original object's property and thus the changes of these properties' values won't affect the original object.
+
 ## Testing the fidoconfig module
 
 [![(build testing status)](https://img.shields.io/travis/Mithgol/node-fidoconfig/master.svg?style=plastic)](https://travis-ci.org/Mithgol/node-fidoconfig)
