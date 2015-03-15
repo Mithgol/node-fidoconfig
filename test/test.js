@@ -2,13 +2,13 @@
 var areas, areasNoFunction;
 var assert = require('assert');
 var path = require('path');
-var fidoconfig = require('../');
 
 var pathCFG = path.join(__dirname, 'areas.cfg');
 
 describe('Echomail area configuration parser', function(){
    it('can run a fidoconfig echomail area configuration parser', function(){
       assert.doesNotThrow(function(){
+         var fidoconfig = require('../');
          areas = fidoconfig.areas(pathCFG);
          areasNoFunction = fidoconfig.areas(pathCFG);
          delete areasNoFunction.area;
