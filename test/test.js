@@ -57,6 +57,7 @@ describe('Echomail area configuration parser', function(){
          areas = fidoconfig.areas(pathCFG);
          areasNoFunction = fidoconfig.areas(pathCFG);
          delete areasNoFunction.area;
+         delete areasNoFunction.getAreaNames;
       });
    });
    it('reads the correct echomail area configuration', function(){
