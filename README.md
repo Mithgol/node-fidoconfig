@@ -1,3 +1,5 @@
+[![(a histogram of downloads)](https://nodei.co/npm-dl/fidoconfig.png?height=3)](https://npmjs.org/package/fidoconfig)
+
 This module (`fidoconfig`) is a reader of fidoconfig (Fidonet configuration) files. These files are mostly [used](http://husky.sourceforge.net/fidoconf.html) by Husky Portable Fidonet project.
 
 This module is written in JavaScript and requires [Node.js](http://nodejs.org/) to run. (Node.js version 0.10.x or 0.12.x is recommended. The latest stable [io.js](https://iojs.org/) is fine too.)
