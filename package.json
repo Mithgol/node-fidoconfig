@@ -1,7 +1,7 @@
 {
 "name": "fidoconfig",
 "main": "fidoconfig.js",
-"version": "0.2.1",
+"version": "0.2.2",
 "description": "A reader of fidoconfig (Fidonet configuration) files.",
 "keywords": ["Fido", "Fidonet", "fidoconfig"],
 "author": { "name": "Mithgol the Webmaster" },
@@ -11,8 +11,8 @@
    "url": "https://github.com/Mithgol/node-fidoconfig.git"
 },
 "dependencies": {
-   "extend": "~2.0.0",
-   "simteconf": "~0.6.9",
+   "extend": "~3.0.0",
+   "simteconf": "~0.6.12",
    "underscore.string": "~3.1.1"
 },
 "scripts": {
