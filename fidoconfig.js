@@ -67,7 +67,7 @@ module.exports.areas = function(areaFilePath, givenOptions){
    };
 
    echomailAreas.getAreaNames = function(){
-      return this.getOwnPropertyNames().filter(function(propertyName){
+      return Object.getOwnPropertyNames(this).filter(function(propertyName){
          if( propertyName === 'area' ) return false;
          if( propertyName === 'getAreaNames' ) return false;
          return true;
