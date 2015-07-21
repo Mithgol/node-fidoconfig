@@ -82,4 +82,19 @@ describe('Echomail area configuration parser', function(){
       };
       fieldProcessor();
    });
+   it('can use `getAreaNames` method to read names of echomail areas',
+   function(){
+      assert.deepEqual(
+         areas.getAreaNames(),
+         [         
+            'ganjanet.local',
+            'ru.blog.mithgol',
+            'sunny.night',
+            'ru.ftn.develop',
+            'ru.ftn.winsoft',
+            'su.fidotech',
+            'synchronet'
+         ]
+      );
+   });
 });
