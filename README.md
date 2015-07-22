@@ -63,7 +63,7 @@ In addition to properties (that represent areas) the returned object also ha
    * If the area exists in the passthrough mode, `callback({passthrough: true})` is called.
    * If the area exists and its mode isn't passthrough, `callback(null, areaData)` is called. The `areaData` object (received by that callback) describes the designated echomail area (it has the properties such as `path` or `description` as explained above); however, it is a clone of the original object's property and thus the changes of these properties' values won't affect the original object.
 
-* `.getAreaNames()` — returns an array containing all of the area names.
+* `.getAreaNames()` — returns an array containing all of the area names (lowercase).
 
 ## Testing the fidoconfig module
 
