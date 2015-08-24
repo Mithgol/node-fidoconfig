@@ -85,7 +85,7 @@ describe('Echomail area configuration parser', function(){
    it('can use `getAreaNames` method to read names of echomail areas',
    function(){
       assert.deepEqual(
-         areas.getAreaNames(),
+         areas.getAreaNames().sort(),
          [         
             'ganjanet.local',
             'ru.blog.mithgol',
@@ -94,7 +94,7 @@ describe('Echomail area configuration parser', function(){
             'ru.ftn.winsoft',
             'su.fidotech',
             'synchronet'
-         ]
+         ].sort()
       );
    });
 });
