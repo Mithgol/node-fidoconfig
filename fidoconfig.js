@@ -1,13 +1,10 @@
 var extend = require('extend');
 var simteconf = require('simteconf');
 
-var strLeft = require('underscore.string/strLeft');
-
 var beforeSpace = function(inString){
-   if( inString.indexOf(' ') === -1 ){
-      return inString;
-   }
-   return strLeft(inString, ' ');
+   var spaceIDX = inString.indexOf(' ');
+   if( spaceIDX < 0 ) return inString;
+   return inString.slice(0, spaceIDX);
 };
 
 module.exports.areas = function(areaFilePath, givenOptions){
