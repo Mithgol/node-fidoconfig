@@ -2,7 +2,7 @@
 
 This module (`fidoconfig`) is a reader of fidoconfig (Fidonet configuration) files. These files are mostly [used](http://husky.sourceforge.net/fidoconf.html) by Husky Portable Fidonet project.
 
-This module is written in JavaScript and requires [Node.js](http://nodejs.org/) to run. (Node.js version 0.10.x or 0.12.x is recommended. The latest stable [io.js](https://iojs.org/) is fine too.)
+This module is written in JavaScript and requires [Node.js](http://nodejs.org/) to run. It is tested against Node.js v0.10.x, Node.js v0.12.x, Node.js v4.x and the latest stable Node.js version.
 
 This module is currently in an early phase of its development and thus does not have the desired level of feature completeness.
 
