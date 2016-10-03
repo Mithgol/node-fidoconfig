@@ -1,7 +1,7 @@
 {
 "name": "fidoconfig",
 "main": "fidoconfig.js",
-"version": "0.2.5",
+"version": "0.2.6",
 "description": "A reader of fidoconfig (Fidonet configuration) files.",
 "keywords": ["Fido", "Fidonet", "fidoconfig"],
 "author": { "name": "Mithgol the Webmaster" },
@@ -12,7 +12,7 @@
 },
 "dependencies": {
    "extend": "~3.0.0",
-   "simteconf": "~0.6.13"
+   "simteconf": "~0.7.0"
 },
 "scripts": {
    "pretest": "jshint --verbose fidoconfig.js test/",
