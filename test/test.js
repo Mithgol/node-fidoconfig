@@ -50,9 +50,9 @@ var testData = {
    }
 };
 
-describe('Echomail area configuration parser', function(){
-   it('can run a fidoconfig echomail area configuration parser', function(){
-      assert.doesNotThrow(function(){
+describe('Echomail area configuration parser', () => {
+   it('can run a fidoconfig echomail area configuration parser', () => {
+      assert.doesNotThrow(() => {
          var fidoconfig = require('../');
          areas = fidoconfig.areas(pathCFG);
          areasNoFunction = fidoconfig.areas(pathCFG);
@@ -60,21 +60,21 @@ describe('Echomail area configuration parser', function(){
          delete areasNoFunction.getAreaNames;
       });
    });
-   it('reads the correct echomail area configuration', function(){
-      assert.deepEqual(areasNoFunction, testData);
-   });
+   it('reads the correct echomail area configuration', () => assert.deepEqual(
+      areasNoFunction, testData
+   ));
    it('can use `area` method to read individual echomail area configuration',
-   function(done){
+   done => {
       var fields = [];
       for( var field in testData ){
          if( testData.hasOwnProperty(field) ) fields.push(field);
       }
 
-      var fieldProcessor = function(){
+      var fieldProcessor = () => {
          var nextField = fields.pop();
          if( typeof nextField === 'undefined') return done();
 
-         areas.area(nextField, function(err, data){
+         areas.area(nextField, (err, data) => {
             assert.ok(!err);
             assert.deepEqual(data, testData[nextField]);
             fieldProcessor();
@@ -82,8 +82,7 @@ describe('Echomail area configuration parser', function(){
       };
       fieldProcessor();
    });
-   it('can use `getAreaNames` method to read names of echomail areas',
-   function(){
+   it('can use `getAreaNames` method to read names of echomail areas', () => {
       assert.deepEqual(
          areas.getAreaNames().sort(),
          [         

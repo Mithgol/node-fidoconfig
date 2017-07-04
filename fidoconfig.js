@@ -1,13 +1,13 @@
 var extend = require('extend');
 var simteconf = require('simteconf');
 
-var beforeSpace = function(inString){
+var beforeSpace = inString => {
    var spaceIDX = inString.indexOf(' ');
    if( spaceIDX < 0 ) return inString;
    return inString.slice(0, spaceIDX);
 };
 
-module.exports.areas = function(areaFilePath, givenOptions){
+module.exports.areas = (areaFilePath, givenOptions) => {
    var defaultSettings = {
       encoding: 'utf8'
    };
@@ -28,7 +28,7 @@ module.exports.areas = function(areaFilePath, givenOptions){
    var echoArea = configLines.group('EchoArea');
 
    var echomailAreas = {};
-   echoArea.names().forEach(function(echoAreaName){
+   echoArea.names().forEach(echoAreaName => {
       var lcEchoAreaName = echoAreaName.toLowerCase();
       var echoAreaLine = echoArea.first(echoAreaName);
       var echoPath = beforeSpace(echoAreaLine);
@@ -37,9 +37,7 @@ module.exports.areas = function(areaFilePath, givenOptions){
       if( passthrough ) echoPath = 'passthrough';
 
       var echoDesc = /-d "([^"]+?)"/.exec(echoAreaLine);
-      if( echoDesc !== null ){
-         echoDesc = echoDesc[1];
-      }
+      if( echoDesc !== null ) echoDesc = echoDesc[1];
 
       echomailAreas[lcEchoAreaName] = {
          configName: echoAreaName,
@@ -64,7 +62,7 @@ module.exports.areas = function(areaFilePath, givenOptions){
    };
 
    echomailAreas.getAreaNames = function(){
-      return Object.getOwnPropertyNames(this).filter(function(propertyName){
+      return Object.getOwnPropertyNames(this).filter(propertyName => {
          if( propertyName === 'area' ) return false;
          if( propertyName === 'getAreaNames' ) return false;
          return true;
